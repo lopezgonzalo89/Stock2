@@ -75,7 +75,7 @@ $(document).ready(function () {
 
 //Carga la fecha
 $(document).ready(function () {
-    $(".fecha").append("<input type='text' name='fecha' class='fecha' value='" + new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate() +"'/>");
+    $(".fecha").append("<input type='text' name='fecha' class='fecha' value='" + new Date().getFullYear() + "-" + new Date().getMonth()+1 + "-" + new Date().getDate() +"'/>");
 });
 
 // Carga tipo de unidad a mano

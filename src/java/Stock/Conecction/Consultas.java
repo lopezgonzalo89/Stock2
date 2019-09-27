@@ -35,11 +35,6 @@ public class Consultas extends Conexion {
         return productos;
     }
 
-    public static void main(String[] args) throws SQLException {
-        Consultas con = new Consultas();
-        System.out.println(con.getProductos());
-    }
-
     public boolean Autenticacion(String user, String pass) throws SQLException {
         Statement st = con.createStatement();
         ResultSet rs = null;
@@ -53,5 +48,4 @@ public class Consultas extends Conexion {
         }
         return false;
     }
-
 }
