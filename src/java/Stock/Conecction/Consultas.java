@@ -39,4 +39,19 @@ public class Consultas extends Conexion {
         Consultas con = new Consultas();
         System.out.println(con.getProductos());
     }
+
+    public boolean Autenticacion(String user, String pass) throws SQLException {
+        Statement st = con.createStatement();
+        ResultSet rs = null;
+        String Consulta = "select * from usuarios";
+        rs = st.executeQuery(Consulta);
+
+        while (rs.next()) {
+            if (user.equals(rs.getString("Usuario")) && pass.equals(rs.getString("Contrasena"))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

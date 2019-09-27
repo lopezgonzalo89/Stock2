@@ -30,13 +30,9 @@ body {
 
 .contenido {
     height: 740px;
-    background-color: white;
+    background-color: black;
     text-align: center;
     border: 2px solid rgb(0, 0, 0);
-}
-
-.dataTables_filter {
-    padding-top: 5px;
 }
 
 thead {

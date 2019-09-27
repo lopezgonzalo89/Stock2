@@ -4,9 +4,17 @@
         <servlet-name>IndexController</servlet-name>
         <servlet-class>Stock.Servlet.IndexController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Validacion</servlet-name>
+        <servlet-class>Stock.Servlet.Validacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>
         <url-pattern>/IndexController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Validacion</servlet-name>
+        <url-pattern>/Validacion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
