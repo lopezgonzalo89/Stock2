@@ -1,0 +1,104 @@
+body {
+    background-color: rgb(241, 239, 205);
+}
+
+.cuerpo {
+    background-color: white;
+    border-top: 2px solid rgb(0, 0, 0);
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.logo {
+    width: 100px;
+}
+
+#titulo {
+    top: 30px;
+}
+
+.nav {
+    background-color: rgb(63, 63, 63);
+    height: 70px;
+    padding: 15px;
+}
+
+.contenido {
+    height: 740px;
+    background-color: white;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#btnCargar {
+    font-size: 20px;
+    background-color: green;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(1, 99, 1);
+}
+
+.formulario {
+    margin-top: 30px;
+    background-color: rgb(231, 230, 227);
+    overflow-y: auto;
+    width: 600px;
+}
+select{
+    width: 130px;
+    height: 28px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cuadroProd {
+    margin-left: 10px;
+    margin-right: 30px;
+    width: 150px;    
+}
+
+label{
+    background-color: rgb(226, 226, 211);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#cuadroNum {
+    margin-left: 10px;
+    width: 80px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#form {
+    margin: 5px;
+    padding-left: 15px;
+    border: 2px solid;
+    height: 350px;
+}
+
+.fecha{
+    display: inline-block;
+    width: 100px;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+}
+textarea{
+    border-radius: 4px;
+}
+
+footer {
+    background-color: black;
+    height: 20px;
+}
+
+h5 {
+    color: white;
+    font-size: 11px;
+}

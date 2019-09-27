@@ -6,11 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import com.google.gson.Gson;
 
 public class Consultas extends Conexion {
 
-    public String getProductos() throws SQLException {
+    public ArrayList getProductos() throws SQLException {
         ArrayList<Productos> productos = new ArrayList<>();
 
         try {
@@ -30,12 +29,10 @@ public class Consultas extends Conexion {
 
                 productos.add(tempProd);
                 System.out.println(productos);
-                productos.remove(tempProd);
             }
         } catch (SQLException e) {
         }
-        String json = new Gson().toJson(productos);
-        return json;
+        return productos;
     }
 
     public static void main(String[] args) throws SQLException {
