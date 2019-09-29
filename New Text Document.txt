@@ -1,8 +1,0 @@
-a
-
-<<<<<<< HEAD
-modificado el de escritorio
-=======
-
-modificado el clone
->>>>>>> c03d1fc61464c725b4efea9c83e048550b4a0ec8
