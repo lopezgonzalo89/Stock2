@@ -9,8 +9,8 @@
         <servlet-class>Stock.Servlet.Validacion</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Movimientos</servlet-name>
-        <servlet-class>Stock.Servlet.Movimientos</servlet-class>
+        <servlet-name>MovimientosController</servlet-name>
+        <servlet-class>Stock.Servlet.MovimientosController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>
@@ -21,8 +21,8 @@
         <url-pattern>/Validacion</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Movimientos</servlet-name>
-        <url-pattern>/Movimientos</url-pattern>
+        <servlet-name>MovimientosController</servlet-name>
+        <url-pattern>/MovimientosController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

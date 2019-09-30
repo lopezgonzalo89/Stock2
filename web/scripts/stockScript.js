@@ -21,13 +21,11 @@ function getProductos() {
                 }
                 $("#tablaContenido").append('<tr id="tablaValores"><td>' + estado + '</td><td>' + valor.Nombre + '</td><td> agregar cantidad</td><td>' + valor.Unidad + '</td>        <td>' + valor.Minimo + '</td>        <td>' + valor.Maximo + '</td><td>' + valor.Categoria + '</td>    </tr>');
             }
+            $("#tablaProductos").DataTable({
+                scrollY: '570px',
+                scrollCollapse: true,
+                paging: false
+            });
         }
     });
 }
-$(document).ready(function () {
-    $("#tablaProductos").DataTable({
-        scrollY: '570px',
-        scrollCollapse: true,
-        paging: false
-    });
-});

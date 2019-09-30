@@ -6,29 +6,29 @@ VALUES (NULL, '1', '2019-09-10', '50000', 'Primer carga, desde MySQL', '11')
 
 var productos = [{
     "IdProducto": 1,
-    "Nombre": "Equum Honey",
+    "Nombre": "Equum Honey"
 },
 {
     "IdProducto": 2,
-    "Nombre": "Segundo",
+    "Nombre": "Segundo"
 },
 {
     "IdProducto": 3,
-    "Nombre": "Tercero",
+    "Nombre": "Tercero"
 },
 {
     "IdProducto": 4,
-    "Nombre": "Cuarto",
+    "Nombre": "Cuarto"
 },
 {
     "IdProducto": 5,
-    "Nombre": "Quinto",
+    "Nombre": "Quinto"
 },
 {
     "IdProducto": 6,
-    "Nombre": "Sexto",
-},
-]
+    "Nombre": "Sexto"
+}
+];
 var movimientos = [{
     "IdTipoMov": 1,
     "TipoMov": "Compra"
@@ -48,13 +48,13 @@ var movimientos = [{
 {
     "IdTipoMov": 5,
     "TipoMov": "Sebastian"
-},
-]
+}
+];
 
 
 // Carga los productos
 $(document).ready(function () {
-    $(".cuadroProd").html("")
+    $(".cuadroProd").html("");
     for (let valor of productos) {
         $(".cuadroProd").append('<option value="' + valor.IdProducto + '">' + valor.Nombre + '</option>');
     }       
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 // Carga los tipos de movimientos
 $(document).ready(function () {
-    $(".cuadroMov").html("")
+    $(".cuadroMov").html("");
     for (let valor of movimientos) {
         $(".cuadroMov").append('<option value="' + valor.IdTipoMov + '">' + valor.TipoMov + '</option>');
     }
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
 //Carga la fecha
 $(document).ready(function () {
-    $(".fecha").append("<input type='text' name='fecha' class='fecha' value='" + new Date().getFullYear() + "-" + new Date().getMonth()+1 + "-" + new Date().getDate() +"'/>");
+    $(".fecha").append("<input type='text' name='fecha' class='fecha' value='" + new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate() +"'/>");
 });
 
 // Carga tipo de unidad a mano
@@ -97,22 +97,22 @@ $(document).ready(function () {
 // Carga tipo de categoria a mano
 var categoria = null;
 $(document).ready(function () {
-    if (categoria == null) {
-        $(".categoria").append('<option>CATEGORIA</option>')
-    } else if (categoria == 1) {
-        $(".categoria").append('<option>Cerveza tirada</option>')
-    } else if (categoria == 2) {
-        $(".categoria").append('<option>Cerveza de litro</option>')
-    } else if (categoria == 3) {
-        $(".categoria").append('<option>Porrones</option>')
-    } else if (categoria == 4) {
-        $(".categoria").append('<option>Destilados</option>')
-    } else if (categoria == 5) {
-        $(".categoria").append('<option>Aperitivos</option>')
-    } else if (categoria == 6) {
-        $(".unidad").append('<option>Licores</option>')
-    } else if (categoria == 7) {
-        $(".categoria").append('<option>Bebidas sin alcohol</option>')
+    if (categoria === null) {
+        $(".categoria").append('<option>CATEGORIA</option>');
+    } else if (categoria === 1) {
+        $(".categoria").append('<option>Cerveza tirada</option>');
+    } else if (categoria === 2) {
+        $(".categoria").append('<option>Cerveza de litro</option>');
+    } else if (categoria === 3) {
+        $(".categoria").append('<option>Porrones</option>');
+    } else if (categoria === 4) {
+        $(".categoria").append('<option>Destilados</option>');
+    } else if (categoria === 5) {
+        $(".categoria").append('<option>Aperitivos</option>');
+    } else if (categoria === 6) {
+        $(".unidad").append('<option>Licores</option>');
+    } else if (categoria === 7) {
+        $(".categoria").append('<option>Bebidas sin alcohol</option>');
     }
 });
 

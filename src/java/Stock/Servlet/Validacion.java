@@ -13,18 +13,22 @@ import Stock.Conecction.Consultas;
 public class Validacion extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
        
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         
         Consultas con = new Consultas();
-        
+        try {
+            
         if(con.Autenticacion(user, pass)){
             response.sendRedirect("stock.jsp");
         } else {
             response.sendRedirect("index.jsp");
+        }
+        } catch (IOException | ClassNotFoundException | SQLException e) {
+            System.out.println("Error " + e);
         }
     }
 
@@ -44,6 +48,8 @@ public class Validacion extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -61,6 +67,8 @@ public class Validacion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
