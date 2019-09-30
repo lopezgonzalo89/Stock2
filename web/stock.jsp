@@ -39,7 +39,7 @@
             </div>
             <div class="col-4">
                 <a class="btn btn-success" href="movimientos.html">MOVIMIENTOS</a>
-                <a class="btn btn-success" href="registros.html">REGISTROS</a>
+                <a class="btn btn-success" href="alta.html">ALTA PRODUCTOS</a>
             </div>
         </div>
     </div>

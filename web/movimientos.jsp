@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-3">
                     <a class="btn btn-success" href="stock.jsp">STOCK</a>
-                    <a class="btn btn-success" href="registros.html">REGISTROS</a>
+                    <a class="btn btn-success" href="alta.html">ALTA PRODUCTOS</a>
                 </div>
             </div>
         </div>
