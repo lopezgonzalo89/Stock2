@@ -64,14 +64,16 @@
                 </div>
             </form>
         </div>
-        <br>
-        <!--<button type="button" class="btn btn-success" id="btnAgregar"> Agregar otro producto</button>-->
+        <br>        
+        <h3>Fallo al cargar producto </h3>
+        
     </div>
-
+    </div>
+    <div>
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>Â©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 

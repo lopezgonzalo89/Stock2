@@ -1,14 +1,8 @@
-/*
-INSERT INTO `movimientos` 
-(`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) 
-VALUES (NULL, '1', '2019-09-10', '50000', 'Primer carga, desde MySQL', '11')
-*/
-
 var productos = [{
     "IdProducto": 1,
-    "Nombre": "Equum Honey"
+    "Nombre": "Cerveza Heineken"
 },
-{
+{ 
     "IdProducto": 2,
     "Nombre": "Segundo"
 },
@@ -34,7 +28,7 @@ var movimientos = [{
     "TipoMov": "Compra"
 },
 {
-    "IdTipoMov": 2,
+    "IdTipoMov": 3,
     "TipoMov": "Venta"
 },
 {
@@ -51,7 +45,21 @@ var movimientos = [{
 }
 ];
 
-
+$(document).ready(function () {
+    getProductos();
+});
+function getProductos() {
+    $.ajax({
+        type: "get",
+        url: "MovimientosIndex",
+        async: true,
+        cache: false,
+        dateType: "json",
+        success: function (resp) {
+            console.log("ajax en controller" + resp);            
+        }
+    });
+}
 // Carga los productos
 $(document).ready(function () {
     $(".cuadroProd").html("");
@@ -71,11 +79,6 @@ $(document).ready(function () {
         $(".cuadroMov").append('<option value="' + valor.IdTipoMov + '">' + valor.TipoMov + '</option>');
     }
     $(".cuadroMov").select2();
-});
-
-//Carga la fecha
-$(document).ready(function () {
-    $(".fecha").append("<input type='text' name='fecha' class='fecha' value='" + new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate() +"'/>");
 });
 
 // Carga tipo de unidad a mano
@@ -116,12 +119,3 @@ $(document).ready(function () {
     }
 });
 
-// Carga para agregar nuevo producto
-/*$("#btnAgregar").click(function () {
-    $(".agregar").append('    <br>    <label for="">Producto</label>    <select name="idProd" class="cuadroProd">    </select> <br>    <label for="">Cantidad</label>    <input type="number" name="cant" id="cuadroNum" min="0" /> <br>    <label for="">Unidad</label>    <select class="unidad">    </select> <br>    <label for="">Categoria</label>    <select class="categoria">    </select> <br>    <label for="">Tipo de movimiento</label>    <select name="idTipoMov" class="cuadroMov">    </select> <br>    <label for="">Nota</label>    <textarea name="nota" id="idNota" cols="30" rows=""></textarea> <br>    <input type="date" name="Fecha" id="">Fecha  <br>');
-    for (let valor of productos) {
-        $(".cuadroProd").append('<option value="' + valor.id + '">' + valor.Nombre + '</option>');
-    }
-    $(".cuadroProd").select2();
-});
-*/

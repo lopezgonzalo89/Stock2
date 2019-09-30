@@ -15,18 +15,18 @@ public class Consultas extends Conexion {
         try {
             Connection con = Conexion.getConnection();
             Statement st = con.createStatement();
-            String Consulta = "select * from productos";
+            String Consulta = "select * from productos INNER JOIN Categorias on productos.IdCategoria = categorias.IdCategoria INNER JOIN unidades on productos.IdUnidad = unidades.IdUnidad ";
             ResultSet rs = st.executeQuery(Consulta);
-
+         
             while (rs.next()) {
                 int IdProducto = rs.getInt("IdProducto");
                 String Nombre = rs.getString("Nombre");
                 int Minimo = rs.getInt("StockMinimo");
                 int Maximo = rs.getInt("StockMaximo");
-                int IdUnidad = rs.getInt("IdUnidad");
-                int IdCategoria = rs.getInt("IdCategoria");
+                String Unidad = rs.getString("TipoUnidad");
+                String Categoria = rs.getString("Categoria");
 
-                Productos tempProd = new Productos(IdProducto, Nombre, IdUnidad, Minimo, Maximo, IdCategoria);
+                Productos tempProd = new Productos(Nombre, Unidad, Minimo, Maximo, Categoria);
 
                 productos.add(tempProd);
                 System.out.println(productos);

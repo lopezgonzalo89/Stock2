@@ -12,6 +12,10 @@
         <servlet-name>MovimientosController</servlet-name>
         <servlet-class>Stock.Servlet.MovimientosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MovimientosIndex</servlet-name>
+        <servlet-class>Stock.Servlet.MovimientosIndex</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>
         <url-pattern>/IndexController</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>MovimientosController</servlet-name>
         <url-pattern>/MovimientosController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MovimientosIndex</servlet-name>
+        <url-pattern>/MovimientosIndex</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
