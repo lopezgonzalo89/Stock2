@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class MovimientosController extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,6 +32,5 @@ public class MovimientosController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error " + e);
         }
-
     }
 }
