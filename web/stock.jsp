@@ -53,8 +53,8 @@
                             <th>PRODUCTO</th>
                             <th>CANTIDAD</th>
                             <th>UNIDAD</th>
-                            <th>Stock mínimo</th>
-                            <th>Stock máximo</th>
+                            <th>Stock Mín</th>
+                            <th>Stock Máx</th>
                             <th>CATEGORIA</th>
                         </tr>
                     </thead>
