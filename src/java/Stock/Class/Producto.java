@@ -1,21 +1,31 @@
 package Stock.Class;
 
-public class Productos {
+public class Producto {
 
     private String Nombre;
     private String Unidad;
     private int Minimo;
     private int Maximo;
     private String Categoria;
+    private int IdProducto;
 
-    public Productos(String Nombre,String Unidad, int Minimo, int Maximo, String Categoria) {
+    public Producto(String Nombre, String Unidad, int Minimo, int Maximo, String Categoria, int IdProducto) {
         this.Nombre = Nombre;
         this.Unidad = Unidad;
         this.Minimo = Minimo;
         this.Maximo = Maximo;
         this.Categoria = Categoria;
-    }        
-    
+        this.IdProducto = IdProducto;
+    }
+
+    public int getIdProducto() {
+        return IdProducto;
+    }
+
+    public void setIdProducto(int IdProducto) {
+        this.IdProducto = IdProducto;
+    }
+
     public String getNombre() {
         return Nombre;
     }
@@ -56,6 +66,4 @@ public class Productos {
         this.Categoria = Categoria;
     }
 
-    
-    
 }

@@ -28,7 +28,7 @@ public class MovimientosController extends HttpServlet {
             PreparedStatement st = con.prepareStatement("INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '"+ idProd +"', '"+ fecha +"', '"+ cant +"', '"+ nota +"', '"+ idTipoMov +"')");
             st.execute();
             System.out.println(st);
-            response.sendRedirect("movimientos.html");
+            response.sendRedirect("movimientos.html"); 
                     
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error " + e);

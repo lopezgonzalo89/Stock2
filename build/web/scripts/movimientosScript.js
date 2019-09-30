@@ -1,54 +1,33 @@
 var productos = [{
-    "IdProducto": 1,
-    "Nombre": "Cerveza Heineken"
-},
-{ 
-    "IdProducto": 2,
-    "Nombre": "Segundo"
-},
-{
-    "IdProducto": 3,
-    "Nombre": "Tercero"
-},
-{
-    "IdProducto": 4,
-    "Nombre": "Cuarto"
-},
-{
-    "IdProducto": 5,
-    "Nombre": "Quinto"
-},
-{
-    "IdProducto": 6,
-    "Nombre": "Sexto"
-}
+        "IdProducto": 1,
+        "Nombre": "Cerveza Heineken"
+    },
+    {
+        "IdProducto": 2,
+        "Nombre": "Segundo"
+    },
+    {
+        "IdProducto": 3,
+        "Nombre": "Tercero"
+    },
+    {
+        "IdProducto": 4,
+        "Nombre": "Cuarto"
+    },
+    {
+        "IdProducto": 5,
+        "Nombre": "Quinto"
+    },
+    {
+        "IdProducto": 6,
+        "Nombre": "Sexto"
+    }
 ];
-var movimientos = [{
-    "IdTipoMov": 1,
-    "TipoMov": "Compra"
-},
-{
-    "IdTipoMov": 3,
-    "TipoMov": "Venta"
-},
-{
-    "IdTipoMov": 3,
-    "TipoMov": "Gonzalo"
-},
-{
-    "IdTipoMov": 4,
-    "TipoMov": "Omar"
-},
-{
-    "IdTipoMov": 5,
-    "TipoMov": "Sebastian"
-}
-];
-
 $(document).ready(function () {
+    getMovimientos();
     getProductos();
 });
-function getProductos() {
+function getMovimientos() {
     $.ajax({
         type: "get",
         url: "MovimientosIndex",
@@ -56,30 +35,34 @@ function getProductos() {
         cache: false,
         dateType: "json",
         success: function (resp) {
-            console.log("ajax en controller" + resp);            
+            console.log("ajax en coller" + resp);
+            $(".cuadroMov").html("");
+            for (let valor of resp) {
+                $(".cuadroMov").append('<option value= ' + valor.idMovimiento + '>' + valor.movimiento + '</option>');
+            }
+            $(".cuadroMov").select2();
         }
     });
 }
-// Carga los productos
-$(document).ready(function () {
-    $(".cuadroProd").html("");
-    for (let valor of productos) {
-        $(".cuadroProd").append('<option value="' + valor.IdProducto + '">' + valor.Nombre + '</option>');
-    }       
-    $(".cuadroProd").select2({  
-        heigth: 500
-                      
+function getProductos() {
+    $.ajax({
+        type: "get",
+        url: "IndexController",
+        async: true,
+        cache: false,
+        dateType: "json",
+        success: function (resp2) {
+            console.log("addddddddddd" + resp2);
+            $(".cuadroProd").html("");
+            for (let valor of resp2) {
+                $(".cuadroProd").append('<option value="' + valor.IdProducto + '">' + valor.Nombre + '</option>');
+            }
+            $(".cuadroProd").select2({
+                heigth: 500
+            });
+        }
     });
-});
-
-// Carga los tipos de movimientos
-$(document).ready(function () {
-    $(".cuadroMov").html("");
-    for (let valor of movimientos) {
-        $(".cuadroMov").append('<option value="' + valor.IdTipoMov + '">' + valor.TipoMov + '</option>');
-    }
-    $(".cuadroMov").select2();
-});
+}
 
 // Carga tipo de unidad a mano
 var unidad = null;
