@@ -74,26 +74,4 @@ public class Consultas extends Conexion {
         }
         return movimiento;
     }
-    public ArrayList get() throws SQLException, ClassNotFoundException {
-        ArrayList<TipoMovimiento> movimiento = new ArrayList<>();
-
-        try {
-            Connection con = Conexion.getConnection();
-            Statement st = con.createStatement();
-            String Consulta = "SELECT * from tipomovimientos";
-            ResultSet rs = st.executeQuery(Consulta);
-
-            while (rs.next()) {
-                String mov = rs.getString("TipoMovimiento");
-                int idMov = rs.getInt("IdTipoMovimiento");
-                
-                TipoMovimiento tempMov = new TipoMovimiento(mov, idMov);
-
-                movimiento.add(tempMov);
-                System.out.println(tempMov);                
-            }
-        } catch (SQLException e) {
-        }
-        return movimiento;
-    }
 }
