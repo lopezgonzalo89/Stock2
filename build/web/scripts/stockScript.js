@@ -12,9 +12,9 @@ function getProductos() {
             console.log(resp);
             $("#tablaContenido").html("");
             for (let valor of resp) {
-                if (valor.Cantidad < valor.StockMinimo) {
+                if (valor.Cantidad < valor.Minimo) {
                     estado = "Comprar";
-                } else if (valor.Cantidad > valor.StockMaximo) {
+                } else if (valor.Cantidad > valor.Maximo) {
                     estado = "Sobra";
                 } else {
                     estado = "Hay";

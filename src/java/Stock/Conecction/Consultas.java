@@ -27,10 +27,18 @@ public class Consultas extends Conexion {
                 String Categoria = rs.getString("Categoria");
                 int IdProducto = rs.getInt("IdProducto");
 
-                Producto tempProd = new Producto(Nombre, Unidad, Minimo, Maximo, Categoria, IdProducto);
+                Statement st2 = con.createStatement();
+                String Consulta2 = "select SUM(cantidad) from movimientos where movimientos.IdProducto = " + IdProducto + "";
+                ResultSet rs2 = st2.executeQuery(Consulta2);
 
-                productos.add(tempProd);
-                System.out.println(productos);
+                while (rs2.next()) {
+                    int cantidad = rs2.getInt("SUM(cantidad)");
+                    System.out.println("rs2 " + cantidad);
+
+                    Producto tempProd = new Producto(Nombre, Unidad, Minimo, Maximo, Categoria, IdProducto, cantidad);
+
+                    productos.add(tempProd);
+                }
             }
         } catch (SQLException e) {
         }
@@ -64,11 +72,11 @@ public class Consultas extends Conexion {
             while (rs.next()) {
                 String mov = rs.getString("TipoMovimiento");
                 int idMov = rs.getInt("IdTipoMovimiento");
-                
+
                 TipoMovimiento tempMov = new TipoMovimiento(mov, idMov);
 
                 movimiento.add(tempMov);
-                System.out.println(tempMov);                
+                System.out.println(tempMov);
             }
         } catch (SQLException e) {
         }

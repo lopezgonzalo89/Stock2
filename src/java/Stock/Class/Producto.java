@@ -8,15 +8,26 @@ public class Producto {
     private int Maximo;
     private String Categoria;
     private int IdProducto;
+    private int Cantidad;
 
-    public Producto(String Nombre, String Unidad, int Minimo, int Maximo, String Categoria, int IdProducto) {
+    public int getCantidad() {
+        return Cantidad;
+    }
+
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
+    }
+
+    public Producto(String Nombre, String Unidad, int Minimo, int Maximo, String Categoria, int IdProducto, int Cantidad) {
         this.Nombre = Nombre;
         this.Unidad = Unidad;
         this.Minimo = Minimo;
         this.Maximo = Maximo;
         this.Categoria = Categoria;
         this.IdProducto = IdProducto;
+        this.Cantidad = Cantidad;
     }
+
 
     public int getIdProducto() {
         return IdProducto;
