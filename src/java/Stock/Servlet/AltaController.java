@@ -1,31 +1,55 @@
 package Stock.Servlet;
 
+import Stock.Conecction.Consultas;
+import Stock.Conecction.Updates;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import Stock.Conecction.Consultas;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.google.gson.Gson;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class IndexController extends HttpServlet {
+public class AltaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        Consultas con = new Consultas();
-        ArrayList resp = con.getProductos();
-        
-        String json = new Gson().toJson(resp);
-        out.println(json);
+        String action = request.getParameter("action");
+
+        if ("getCategorias".equals(action)) {
+            Consultas con = new Consultas();
+            ArrayList resp = con.getCategorias();
+
+            String json = new Gson().toJson(resp);
+            out.println(json);
+        }
+        if ("getUnidades".equals(action)) {
+            Consultas con = new Consultas();
+            ArrayList resp2 = con.getUnidades();
+
+            String json2 = new Gson().toJson(resp2);
+            out.println(json2);
+        } else {
+            System.out.println("En el else");
+            Updates up = new Updates();
+
+            String nombre = request.getParameter("nombre");
+            String minimo = request.getParameter("minimo");
+            String maximo = request.getParameter("maximo");
+            String idUnidad = request.getParameter("idUnidad");
+            String idCategoria = request.getParameter("idCategoria");
+
+            boolean resp = up.Autenticacion(nombre, minimo, maximo, idUnidad, idCategoria);
+        }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -41,9 +65,9 @@ public class IndexController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -61,9 +85,9 @@ public class IndexController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

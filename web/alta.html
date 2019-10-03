@@ -36,10 +36,33 @@
     </div>
     <div class="container contenido">
         <div class="formulario">
-            <form action="MovimientosController">
-                <div id="form">
-                    Formulario de alta.
+            <form action="AltaController?action=altaProducto">
+                <div id="form">      
+                    <br>                    
+                    <label >Producto</label> &nbsp;
+                    <input type="text" name="nombre">
+                    <br> 
+                    <br>                                    
+                    <label>Stock Mínimo</label> &nbsp;
+                    <input type="number" name="minimo" id="cuadroMin" required /> &nbsp;&nbsp;
+                    <br>
+                    <label>Stock Máximo</label> &nbsp;
+                    <input type="number" name="maximo" id="cuadroMax" required /> &nbsp;&nbsp;
+                    <br>                              
+                    <br>        
+                    <label>Unidad</label> &nbsp;
+                    <select name="idUnidad" class="cuadroUnidad">
+                    </select>
+                    <br><br>    
+                    <label>Categoria</label> &nbsp;
+                    <select name="idCategoria" class="cuadroCat">
+                    </select>
+                    <br><br>
                     <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar" />
+
+                    <div class="agregar">
+                        <!-- Select -->
+                    </div>
                 </div>
             </form>
         </div>

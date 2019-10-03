@@ -1,38 +1,86 @@
 package Stock.Servlet;
 
-import Stock.Conecction.Conexion;
+import Stock.Conecction.Consultas;
+import com.google.gson.Gson;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class MovimientosController extends HttpServlet {
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        response.setContentType("application/json;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String action = request.getParameter("action");
+        Consultas con = new Consultas();
+        ArrayList resp = con.getMovimientos();
+
+        String json = new Gson().toJson(resp);
+        out.println(json);
+        if ("getMovimientos".equals(action)) {
+            System.out.println("en el if");
+
+        }
+
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
         try {
-            Connection con = Conexion.getConnection();
-            
-            String fecha = request.getParameter("fecha");
-            String idProd = request.getParameter("idProd");
-            String cant = request.getParameter("cant");
-            String idTipoMov = request.getParameter("idTipoMov");
-            String nota = request.getParameter("nota");
-
-            PreparedStatement st = con.prepareStatement("INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '"+ idProd +"', '"+ fecha +"', '"+ cant +"', '"+ nota +"', '"+ idTipoMov +"')");
-            st.execute();
-            System.out.println(st);
-            response.sendRedirect("movimientos.html"); 
-                    
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error " + e);
-            response.sendRedirect("movimientos.jsp");
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 }

@@ -5,7 +5,7 @@ $(document).ready(function () {
 function getMovimientos() {
     $.ajax({
         type: "get",
-        url: "MovimientosIndex",
+        url: "MovimientosController?action=getMovimientos",
         async: true,
         cache: false,
         dateType: "json",
@@ -22,7 +22,7 @@ function getMovimientos() {
 function getProductos() {
     $.ajax({
         type: "get",
-        url: "IndexController",
+        url: "MovimientosController",
         async: true,
         cache: false,
         dateType: "json",

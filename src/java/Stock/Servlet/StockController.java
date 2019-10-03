@@ -1,19 +1,19 @@
 package Stock.Servlet;
 
-import Stock.Conecction.Consultas;
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Stock.Conecction.Consultas;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.google.gson.Gson;
 
-public class MovimientosIndex extends HttpServlet {
+public class StockController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
@@ -21,7 +21,7 @@ public class MovimientosIndex extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         Consultas con = new Consultas();
-        ArrayList resp = con.getMovimientos();
+        ArrayList resp = con.getProductos();
         
         String json = new Gson().toJson(resp);
         out.println(json);
@@ -41,9 +41,9 @@ public class MovimientosIndex extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -61,9 +61,9 @@ public class MovimientosIndex extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

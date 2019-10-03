@@ -1,7 +1,9 @@
 package Stock.Conecction;
 
+import Stock.Class.Categoria;
 import Stock.Class.TipoMovimiento;
 import Stock.Class.Producto;
+import Stock.Class.Unidad;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +11,21 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Consultas extends Conexion {
+
+    public boolean Autenticacion(String user, String pass) throws SQLException, ClassNotFoundException {
+        Connection con = Conexion.getConnection();
+        Statement st = con.createStatement();
+        ResultSet rs;
+        String Consulta = "select * from usuarios";
+        rs = st.executeQuery(Consulta);
+
+        while (rs.next()) {
+            if (user.equals(rs.getString("Usuario")) && pass.equals(rs.getString("Contrasena"))) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public ArrayList getProductos() throws SQLException, ClassNotFoundException {
         ArrayList<Producto> productos = new ArrayList<>();
@@ -45,21 +62,6 @@ public class Consultas extends Conexion {
         return productos;
     }
 
-    public boolean Autenticacion(String user, String pass) throws SQLException, ClassNotFoundException {
-        Connection con = Conexion.getConnection();
-        Statement st = con.createStatement();
-        ResultSet rs;
-        String Consulta = "select * from usuarios";
-        rs = st.executeQuery(Consulta);
-
-        while (rs.next()) {
-            if (user.equals(rs.getString("Usuario")) && pass.equals(rs.getString("Contrasena"))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public ArrayList getMovimientos() throws SQLException, ClassNotFoundException {
         ArrayList<TipoMovimiento> movimiento = new ArrayList<>();
 
@@ -81,5 +83,49 @@ public class Consultas extends Conexion {
         } catch (SQLException e) {
         }
         return movimiento;
+    }
+
+    public ArrayList getCategorias() throws SQLException, ClassNotFoundException {
+        ArrayList<Categoria> categoria = new ArrayList<>();
+        try {
+            Connection con = Conexion.getConnection();
+            Statement st = con.createStatement();
+            String Consulta = "SELECT * from categorias";
+            ResultSet rs = st.executeQuery(Consulta);
+
+            while (rs.next()) {
+                String cat = rs.getString("Categoria");
+                int idCat = rs.getInt("IdCategoria");
+
+                Categoria tempCat = new Categoria(cat, idCat);
+
+                categoria.add(tempCat);
+                System.out.println(tempCat);
+            }
+        } catch (SQLException e) {
+        }
+        return categoria;
+    }
+
+    public ArrayList getUnidades() throws SQLException, ClassNotFoundException {
+        ArrayList<Unidad> unidad = new ArrayList<>();
+        try {
+            Connection con = Conexion.getConnection();
+            Statement st = con.createStatement();
+            String Consulta = "SELECT * from unidades";
+            ResultSet rs = st.executeQuery(Consulta);
+
+            while (rs.next()) {
+                String unid = rs.getString("TipoUnidad");
+                int idUnid = rs.getInt("IdUnidad");
+
+                Unidad tempUnid = new Unidad(unid, idUnid);
+
+                unidad.add(tempUnid);
+                System.out.println(tempUnid);
+            }
+        } catch (SQLException e) {
+        }
+        return unidad;
     }
 }
