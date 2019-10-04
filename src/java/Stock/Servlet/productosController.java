@@ -1,38 +1,31 @@
 package Stock.Servlet;
 
-import Stock.Conecction.Consultas;
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Stock.Conecction.Consultas;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.google.gson.Gson;
 
-public class MovimientosController extends HttpServlet {
 
+public class productosController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String action = request.getParameter("action");
+        System.out.println("En el servlet productosController");
         Consultas con = new Consultas();
-        ArrayList resp = con.getMovimientos();
-
+        ArrayList resp = con.getProductos();
+        
         String json = new Gson().toJson(resp);
         out.println(json);
-        if ("getMovimientos".equals(action)) {
-            System.out.println("en el if");
-
-        }
-
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -47,10 +40,8 @@ public class MovimientosController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -67,10 +58,8 @@ public class MovimientosController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

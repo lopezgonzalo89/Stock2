@@ -18,6 +18,7 @@ public class Consultas extends Conexion {
         ResultSet rs;
         String Consulta = "select * from usuarios";
         rs = st.executeQuery(Consulta);
+        System.out.println("En consultas validacion");
 
         while (rs.next()) {
             if (user.equals(rs.getString("Usuario")) && pass.equals(rs.getString("Contrasena"))) {
@@ -63,7 +64,7 @@ public class Consultas extends Conexion {
     }
 
     public ArrayList getMovimientos() throws SQLException, ClassNotFoundException {
-        ArrayList<TipoMovimiento> movimiento = new ArrayList<>();
+        ArrayList<TipoMovimiento> movimientos = new ArrayList<>();
 
         try {
             Connection con = Conexion.getConnection();
@@ -77,12 +78,12 @@ public class Consultas extends Conexion {
 
                 TipoMovimiento tempMov = new TipoMovimiento(mov, idMov);
 
-                movimiento.add(tempMov);
+                movimientos.add(tempMov);
                 System.out.println(tempMov);
             }
         } catch (SQLException e) {
         }
-        return movimiento;
+        return movimientos;
     }
 
     public ArrayList getCategorias() throws SQLException, ClassNotFoundException {

@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="css/estilosStock.css">
+    <link rel="stylesheet" href="css/estilosProductos.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
 
@@ -38,8 +38,8 @@
             <div class="col-1">
             </div>
             <div class="col-4">
-                <a class="btn btn-success" href="movimientos.html">MOVIMIENTOS</a>
-                <a class="btn btn-success" href="alta.html">ALTA PRODUCTOS</a>
+                <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
+                <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
     <script src="ventor/popper/popper.min.js"></script>
     <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
     <script src="ventor/datatables/datatables.min.js"></script>
-    <script src="scripts/stockScript.js"></script>
+    <script src="scripts/productosScript.js"></script>
 </body>
 
 </html>

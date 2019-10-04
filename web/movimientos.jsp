@@ -29,14 +29,14 @@
                 <div class="col-9">
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-success" href="stock.jsp">STOCK</a>
-                    <a class="btn btn-success" href="alta.html">ALTA PRODUCTOS</a>
+                    <a class="btn btn-success" href="productos.jsp">STOCK</a>
+                    <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
                 </div>
             </div>
         </div>
         <div class="container contenido">
             <div class="formulario">
-                <form action="MovimientosController">
+                <form action="movimientosController">
                     <div id="form">
                         <br>
                         <label> Fecha </label> &nbsp;&nbsp; <input type ="date" name="fecha"/>
@@ -65,8 +65,6 @@
                 </form>
             </div>
             <br>             
-            <br>        
-            <h3>Fallo al cargar producto </h3>
         </div>
 
         <div class="container">

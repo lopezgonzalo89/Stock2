@@ -1,4 +1,5 @@
 package Stock.Servlet;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -9,24 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Stock.Conecction.Consultas;
 
-
 public class Validacion extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
-       
+
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        
+        System.out.println("En el servlet validacion");
         Consultas con = new Consultas();
         try {
-            
-        if(con.Autenticacion(user, pass)){
-            response.sendRedirect("stock.jsp");
-        } else {
-            response.sendRedirect("index.jsp");
-        }
+            if (con.Autenticacion(user, pass)) {
+                response.sendRedirect("productos.jsp");
+            } else {
+                response.sendRedirect("index.jsp");
+            }
         } catch (IOException | ClassNotFoundException | SQLException e) {
             System.out.println("Error " + e);
         }

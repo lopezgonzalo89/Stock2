@@ -2,9 +2,10 @@ $(document).ready(function () {
     getProductos();
 });
 function getProductos() {
+    console.log("en stock script");
     $.ajax({
         type: "get",
-        url: "IndexController",
+        url: "productosController",
         async: true,
         cache: false,
         dateType: "json",
@@ -19,7 +20,7 @@ function getProductos() {
                 } else {
                     estado = "Hay";
                 }
-                $("#tablaContenido").append('<tr id="tablaValores"><td>' + estado + '</td><td>' + valor.Nombre + '</td><td>'+ valor.Cantidad +'</td><td>' + valor.Unidad + '</td>        <td>' + valor.Minimo + '</td>        <td>' + valor.Maximo + '</td><td>' + valor.Categoria + '</td>    </tr>');
+                $("#tablaContenido").append('<tr id="tablaValores"><td>' + estado + '</td><td>' + valor.Nombre + '</td><td>' + valor.Cantidad + '</td><td>' + valor.Unidad + '</td>        <td>' + valor.Minimo + '</td>        <td>' + valor.Maximo + '</td><td>' + valor.Categoria + '</td>    </tr>');
             }
             $("#tablaProductos").DataTable({
                 scrollY: '570px',

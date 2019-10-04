@@ -5,12 +5,12 @@ $(document).ready(function () {
 function getMovimientos() {
     $.ajax({
         type: "get",
-        url: "MovimientosController?action=getMovimientos",
+        url: "movimientosController?action=getMovimientos",
         async: true,
         cache: false,
         dateType: "json",
         success: function (resp) {
-            console.log("ajax en coller" + resp);
+            console.log("respuesta de movimientosController: " + resp);
             $(".cuadroMov").html("");
             for (let valor of resp) {
                 $(".cuadroMov").append('<option value= ' + valor.idMovimiento + '>' + valor.movimiento + '</option>');
@@ -22,12 +22,12 @@ function getMovimientos() {
 function getProductos() {
     $.ajax({
         type: "get",
-        url: "MovimientosController",
+        url: "productosController",
         async: true,
         cache: false,
         dateType: "json",
         success: function (resp2) {
-            console.log("addddddddddd" + resp2);
+            console.log("respuesta de productosController" + resp2);
             $(".cuadroProd").html("");
             for (let valor of resp2) {
                 $(".cuadroProd").append('<option value="' + valor.IdProducto + '">' + valor.Nombre + '</option>');

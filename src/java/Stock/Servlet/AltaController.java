@@ -46,7 +46,8 @@ public class AltaController extends HttpServlet {
             String idUnidad = request.getParameter("idUnidad");
             String idCategoria = request.getParameter("idCategoria");
 
-            boolean resp = up.Autenticacion(nombre, minimo, maximo, idUnidad, idCategoria);
+            boolean resp = up.Alta(nombre, minimo, maximo, idUnidad, idCategoria);
+            response.sendRedirect("alta.jsp");
         }
     }
 
@@ -64,10 +65,8 @@ public class AltaController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -84,10 +83,8 @@ public class AltaController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StockController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -29,24 +29,24 @@
             <div class="col-9">
             </div>
             <div class="col-3">
-                <a class="btn btn-success" href="stock.jsp">STOCK</a>
-                <a class="btn btn-success" href="movimientos.html">MOVIMIENTOS</a>
+                <a class="btn btn-success" href="productos.jsp">STOCK</a>
+                <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
             </div>
         </div>
     </div>
     <div class="container contenido">
         <div class="formulario">
-            <form action="AltaController?action=altaProducto">
+            <form action="AltaController">
                 <div id="form">      
                     <br>                    
-                    <label >Producto</label> &nbsp;
+                    <label>Producto</label> &nbsp;
                     <input type="text" name="nombre">
                     <br> 
                     <br>                                    
-                    <label>Stock MÃ­nimo</label> &nbsp;
+                    <label>Stock Mínimo</label> &nbsp;
                     <input type="number" name="minimo" id="cuadroMin" required /> &nbsp;&nbsp;
                     <br>
-                    <label>Stock MÃ¡ximo</label> &nbsp;
+                    <label>Stock Máximo</label> &nbsp;
                     <input type="number" name="maximo" id="cuadroMax" required /> &nbsp;&nbsp;
                     <br>                              
                     <br>        
@@ -73,7 +73,7 @@
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>Â©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 
