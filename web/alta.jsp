@@ -19,7 +19,7 @@
                 <img class="logo" src="Imagenes/Logo.png" alt="">
             </div>
             <div class="col-8" Id="titulo">
-                <h1>MOVIMIENTOS</h1>
+                <h1>ALTA de PRODUCTOS</h1>
             </div>
             <div class="col-2">
                 <img class="logo" src="Imagenes/Logo.png" alt="">
@@ -36,7 +36,7 @@
     </div>
     <div class="container contenido">
         <div class="formulario">
-            <form action="AltaController">
+            <form action="cargarMovimiento">
                 <div id="form">      
                     <br>                    
                     <label>Producto</label> &nbsp;
@@ -66,8 +66,8 @@
                 </div>
             </form>
         </div>
+        <h3> ${estado}</h3>
         <br>
-        <!--<button type="button" class="btn btn-success" id="btnAgregar"> Agregar otro producto</button>-->
     </div>
 
     <div class="container">

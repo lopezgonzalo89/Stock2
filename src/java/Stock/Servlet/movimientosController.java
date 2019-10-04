@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,15 +32,27 @@ public class movimientosController extends HttpServlet {
             out.println(json);
         } else {
             Updates up = new Updates();
-            
+
             String fecha = request.getParameter("fecha");
             String idProd = request.getParameter("idProd");
             String cant = request.getParameter("cant");
             String idTipoMov = request.getParameter("idTipoMov");
             String nota = request.getParameter("nota");
-            
+
             boolean resp = up.Movimiento(fecha, idProd, cant, idTipoMov, nota);
-            response.sendRedirect("movimientos.jsp");
+            if (resp == true) {
+                request.setAttribute("estado", "Cargado correctamente");
+                RequestDispatcher rd;
+                rd = request.getRequestDispatcher("/movimientos.jsp");
+                rd.forward(request, response);
+                
+                response.sendRedirect("movimientos.jsp");
+            } else {
+                request.setAttribute("estado", "Fallo al cargar");
+                RequestDispatcher rd;
+                rd = request.getRequestDispatcher("/movimientos.jsp");
+                rd.forward(request, response);
+            }
         }
     }
 

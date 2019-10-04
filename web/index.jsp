@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="css/styleIndex.css"/>
+        <link rel="stylesheet" href="css/estilosIndex.css"/>
         <script src="js/scriptIndex.js"></script>
         <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">        
         <title>Login</title>
@@ -34,7 +34,8 @@
             </div>
         </div>
         <div class="container contenido">
-            <h1>Login de usuario</h1>
+            <br>
+            <br> 
             <div>
                 <form action="Validacion" method ="post">
                     <label>Usuario </label> <input type="text" name="user" id="user"> <br>

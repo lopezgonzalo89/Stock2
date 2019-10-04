@@ -20,6 +20,10 @@
         <servlet-name>movimientosController</servlet-name>
         <servlet-class>Stock.Servlet.movimientosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cargarMovimiento</servlet-name>
+        <servlet-class>Stock.Servlet.cargarMovimiento</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Validacion</servlet-name>
         <url-pattern>/Validacion</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>movimientosController</servlet-name>
         <url-pattern>/movimientosController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cargarMovimiento</servlet-name>
+        <url-pattern>/cargarMovimiento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

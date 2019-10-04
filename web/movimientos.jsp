@@ -57,13 +57,10 @@
                         <br><br>
                         <textarea name="nota" id="idNota" cols="70" rows="2" placeholder="NOTA"></textarea> <br>
                         <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar" />
-
-                        <div class="agregar">
-                            <!-- Select -->
-                        </div>
                     </div>
                 </form>
             </div>
+            <h3>${estado}</h3>
             <br>             
         </div>
 
