@@ -34,8 +34,6 @@ public class cargarMovimiento extends HttpServlet {
                     RequestDispatcher rd;
                     rd = request.getRequestDispatcher("/alta.jsp");
                     rd.forward(request, response);
-
-                    response.sendRedirect("movimientos.jsp");
                 } else {
                     request.setAttribute("estado", "Fallo al cargar");
                     RequestDispatcher rd;

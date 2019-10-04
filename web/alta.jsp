@@ -40,7 +40,7 @@
                 <div id="form">      
                     <br>                    
                     <label>Producto</label> &nbsp;
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" required="">
                     <br> 
                     <br>                                    
                     <label>Stock Mínimo</label> &nbsp;
