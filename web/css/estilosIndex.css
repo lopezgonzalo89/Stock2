@@ -43,3 +43,19 @@ h5 {
     color: white;
     font-size: 11px;
 }
+
+#usuario{
+    margin: auto;
+    padding: 20px;
+    background-color: #a2d4ed;
+    width: 500px;
+    border: solid 1px black;
+    font-size: 25px;
+}
+
+#user{
+    margin: 15px;
+}
+#pass{
+    margin: 15px;
+}

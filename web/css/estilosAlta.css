@@ -60,14 +60,6 @@ select{
     width: 150px;    
 }
 
-label{
-    background-color: rgb(226, 226, 211);
-    color: rgb(0, 0, 0);
-    border: 1px solid black;
-    padding: 2px;
-    border-radius: 5px;
-}
-
 #cuadroNum {
     margin-left: 10px;
     width: 80px;
