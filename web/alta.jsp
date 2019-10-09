@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">    
     <link rel="stylesheet" href="css/estilosAlta.css">
     <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
     <title>Control de Stock</title>
@@ -43,10 +43,10 @@
                     <input type="text" name="nombre" required="">
                     <br> 
                     <br>                                    
-                    <label>Stock Mínimo</label> &nbsp;
+                    <label>Stock Mï¿½nimo</label> &nbsp;
                     <input type="number" name="minimo" id="cuadroMin" required /> &nbsp;&nbsp;
                     <br>
-                    <label>Stock Máximo</label> &nbsp;
+                    <label>Stock Mï¿½ximo</label> &nbsp;
                     <input type="number" name="maximo" id="cuadroMax" required /> &nbsp;&nbsp;
                     <br>                              
                     <br>        
@@ -73,7 +73,7 @@
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>ï¿½ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 

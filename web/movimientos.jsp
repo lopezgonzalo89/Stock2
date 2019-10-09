@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/estilosMovimientos.css">
         <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
         <title>Control de Stock</title>
@@ -67,7 +67,7 @@
         <div class="container">
             <footer class="row">
                 <div class="col-8"></div>
-                <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+                <h5>ï¿½ChoppIn - Italia 953, San Miguel, Argentina.</h5>
             </footer>
         </div>
 

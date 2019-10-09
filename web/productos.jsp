@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/estilosProductos.css">
-    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
 
     <title>Control de Stock</title>
