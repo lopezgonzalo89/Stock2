@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/estilosProductos.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
@@ -53,8 +54,8 @@
                             <th>PRODUCTO</th>
                             <th>CANTIDAD</th>
                             <th>UNIDAD</th>
-                            <th>Stock Mín</th>
-                            <th>Stock Máx</th>
+                            <th>Stock Mï¿½n</th>
+                            <th>Stock Mï¿½x</th>
                             <th>CATEGORIA</th>
                         </tr>
                     </thead>
@@ -68,7 +69,7 @@
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>ï¿½ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 

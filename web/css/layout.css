@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(241, 239, 205);
+}
+
+.cuerpo {
+    background-color: white;
+    border-top: 2px solid rgb(0, 0, 0);
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.logo {
+    width: 100px;
+}
+
+#titulo {
+    top: 30px;
+}
+
+.nav {
+    background-color: rgb(63, 63, 63);
+    height: 70px;
+    padding: 15px;
+}
+.contenido {
+    height: 740px;
+    background-color: white;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+footer {
+    background-color: black;
+    height: 20px;
+}
+
+h5 {
+    color: white;
+    font-size: 11px;
+}
