@@ -37,9 +37,11 @@
             </div>
             <div class="col-1">
             </div>
-            <div class="col-4">
+            <div class="col-12">
+                <a class="btn btn-primary" href="productos.jsp">STOCK</a>
                 <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
                 <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
+                <a class="btn btn-success" href="recetas.jsp">RECETAS</a>
             </div>
         </div>
     </div>
@@ -53,8 +55,8 @@
                             <th>PRODUCTO</th>
                             <th>CANTIDAD</th>
                             <th>UNIDAD</th>
-                            <th>Stock Mï¿½n</th>
-                            <th>Stock Mï¿½x</th>
+                            <th>Stock Mínimo</th>
+                            <th>Stock Máximo</th>
                             <th>CATEGORIA</th>
                         </tr>
                     </thead>
@@ -68,7 +70,7 @@
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>ï¿½ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>@ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 

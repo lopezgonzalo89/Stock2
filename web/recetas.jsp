@@ -28,9 +28,11 @@
         <div class="row nav">
             <div class="col-9">
             </div>
-            <div class="col-3">
+            <div class="col-12">
                 <a class="btn btn-success" href="productos.jsp">STOCK</a>
-
+                <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
+                <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
+                <a class="btn btn-primary" href="recetas.jsp">RECETAS</a>
             </div>
         </div>
     </div>
@@ -41,7 +43,7 @@
                     <p>
                         Primero elegir el producto que se va a elaborar su receta. <br>
                         Luego elijo de a un ingrediente a la vez y toco en el boton Cargar. <br>
-                        Si el ingrediente no se encuentra en la lista se debe agregar yendo a la pÃ¡gina <a
+                        Si el ingrediente no se encuentra en la lista se debe agregar yendo a la página <a
                             href=alta.jsp>Alta</a>
                     </p>
                     <label> Producto </label>                    
@@ -70,7 +72,7 @@
     <div class="container">
         <footer class="row">
             <div class="col-8"></div>
-            <h5>ï¿½ChoppIn - Italia 953, San Miguel, Argentina.</h5>
+            <h5>?ChoppIn - Italia 953, San Miguel, Argentina.</h5>
         </footer>
     </div>
 
