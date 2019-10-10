@@ -26,8 +26,6 @@
             </div>
         </div>
         <div class="row nav">
-            <div class="col-9">
-            </div>
             <div class="col-12">
                 <a class="btn btn-success" href="productos.jsp">STOCK</a>
                 <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>

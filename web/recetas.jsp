@@ -26,8 +26,6 @@
             </div>
         </div>
         <div class="row nav">
-            <div class="col-9">
-            </div>
             <div class="col-12">
                 <a class="btn btn-success" href="productos.jsp">STOCK</a>
                 <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
@@ -38,7 +36,7 @@
     </div>
     <div class="container contenido">
         <div class="formulario">
-            <form action="movimientosController">
+            <form action="recetasController">
                 <div id="form">
                     <p>
                         Primero elegir el producto que se va a elaborar su receta. <br>
@@ -63,7 +61,9 @@
                     <label> Tipo de unidad: </label>                    
                     <select name="idUnidad" class="cuadroUnidad">
                     </select>
-                    
+                    <br>
+                    <br>
+                    <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar"/>
                 </div>
             </form>
         </div>

@@ -26,8 +26,6 @@
                 </div>
             </div>
             <div class="row nav">
-                <div class="col-9">
-                </div>
                 <div class="col-12">
                 <a class="btn btn-success" href="productos.jsp">STOCK</a>
                 <a class="btn btn-primary" href="movimientos.jsp">MOVIMIENTOS</a>
@@ -58,7 +56,7 @@
                         </select>
                         <br><br>
                         <textarea name="nota" id="idNota" cols="70" rows="2" placeholder="NOTA"></textarea> <br>
-                        <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar" />
+                        <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar"/>
                     </div>
                 </form>
             </div>

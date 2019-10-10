@@ -31,12 +31,6 @@
             </div>
         </div>
         <div class="row nav">
-            <div class="col-4">
-            </div>
-            <div class="col-3">
-            </div>
-            <div class="col-1">
-            </div>
             <div class="col-12">
                 <a class="btn btn-primary" href="productos.jsp">STOCK</a>
                 <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
