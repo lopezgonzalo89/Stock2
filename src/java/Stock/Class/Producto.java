@@ -8,9 +8,9 @@ public class Producto {
     private int Maximo;
     private String Categoria;
     private int IdProducto;
-    private int Cantidad;
+    private float Cantidad;
 
-    public int getCantidad() {
+    public float getCantidad() {
         return Cantidad;
     }
 
@@ -18,7 +18,7 @@ public class Producto {
         this.Cantidad = Cantidad;
     }
 
-    public Producto(String Nombre, String Unidad, int Minimo, int Maximo, String Categoria, int IdProducto, int Cantidad) {
+    public Producto(String Nombre, String Unidad, int Minimo, int Maximo, String Categoria, int IdProducto, float Cantidad) {
         this.Nombre = Nombre;
         this.Unidad = Unidad;
         this.Minimo = Minimo;

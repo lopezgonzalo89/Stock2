@@ -30,5 +30,16 @@ public class Updates {
             return false;
         }
     }
+    public boolean Venta(String fecha, String idProd, String cant) {
+        try {
+            Connection con = Conexion.getConnection();
+            PreparedStatement st = con.prepareStatement("INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '"+ idProd +"', '"+ fecha +"', '"+ cant +"', '3')");
+            st.execute();
+            return true;
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error update Movimiento: " + e);
+            return false;
+        }
+    }
 
 }

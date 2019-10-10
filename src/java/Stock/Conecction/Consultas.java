@@ -50,7 +50,7 @@ public class Consultas extends Conexion {
                 ResultSet rs2 = st2.executeQuery(Consulta2);
 
                 while (rs2.next()) {
-                    int cantidad = rs2.getInt("SUM(cantidad)");
+                    float cantidad = rs2.getFloat("SUM(cantidad)");
                     System.out.println("rs2 " + cantidad);
 
                     Producto tempProd = new Producto(Nombre, Unidad, Minimo, Maximo, Categoria, IdProducto, cantidad);
