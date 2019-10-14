@@ -24,8 +24,6 @@
                     <img class="logo" src="Imagenes/Logo.png" alt="">
                 </div>
             </div>
-            <div class="row nav">
-            </div>
         </div>
         <div class="container contenido">
             <br>
@@ -38,12 +36,8 @@
                 </form>
             </div>            
         </div>
-        <div class="container">
-            <footer class="row">
-                <div class="col-8"></div>
-                <h5>©ChoppIn - Italia 953, San Miguel, Argentina.</h5>
-            </footer>
-        </div>
+
+        <%@include file="templates/footer.jsp" %>
 
         <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
         <script src="ventor/popper/popper.min.js"></script>

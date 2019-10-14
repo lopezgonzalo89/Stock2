@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#titulo").append("<h1>CHOPP IN STOCK</h1>");
     getProductos();
 });
 function getProductos() {
@@ -30,3 +31,4 @@ function getProductos() {
         }
     });
 }
+

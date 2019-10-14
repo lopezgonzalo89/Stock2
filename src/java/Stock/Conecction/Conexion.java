@@ -9,7 +9,7 @@ public class Conexion {
         Connection dataBaseConnection;
             Class.forName("com.mysql.cj.jdbc.Driver");
             String sourceURL = "jdbc:mysql://127.0.0.1:3306/choppin_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            dataBaseConnection = DriverManager.getConnection(sourceURL, "Gonz", "sql2019");
+            dataBaseConnection = DriverManager.getConnection(sourceURL, "root", "");
             System.out.println("Conectado a la base de datos");        
         return dataBaseConnection;
     }

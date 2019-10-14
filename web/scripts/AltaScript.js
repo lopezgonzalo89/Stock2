@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#titulo").append("<h1>ALTA</h1>");
     getCategorias();
     getUnidades();
 });

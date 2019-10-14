@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#titulo").append("<h1>MOVIMIENTOS</h1>");
     getMovimientos();
     getProductos();
 });

@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- @LopezGonzalo89 - Septiembre 2019-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +10,6 @@
         <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">           
         <link rel="stylesheet" href="css/layout.css">             
         <link rel="stylesheet" href="css/estilosIndex.css"/>
-        <title>Login</title>
     </head>
     <body>
         <div class="container cuerpo">
@@ -18,30 +18,20 @@
                     <img class="logo" src="Imagenes/Logo.png" alt="">
                 </div>
                 <div class="col-8" Id="titulo">
-                    <h1>CHOPP IN STOCK</h1>
+                    
                 </div>
                 <div class="col-2">
                     <img class="logo" src="Imagenes/Logo.png" alt="">
                 </div>
             </div>
+            <div class="row nav">
+                <div class="col-12">
+                    <a class="btn btn-success" href="productos.jsp">STOCK</a>
+                    <a class="btn btn-success" href="movimientos.jsp">MOVIMIENTOS</a>
+                    <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
+                    <a class="btn btn-success" href="recetas.jsp">RECETAS</a>
+                </div>
+            </div>
         </div>
-        <div class="container contenido">
-            <br>
-            <br> 
-            <div id="usuario">
-                <form action="Validacion" method ="post">
-                    <label>Usuario </label> <input type="text" name="user" id="user"> <br>
-                    <label> Contraseña </label><input type="password" name="pass" id="pass">
-                    <p><input type="submit" name="Entrar" id="Entrar" value="Entrar"></p>
-                </form>
-            </div>            
-        </div>
-
-        <%@include file="templates/footer.jsp" %>
-
-        <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
-        <script src="ventor/popper/popper.min.js"></script>
-        <script src="ventor/bootstrap/js/bootstrap.min.js"></script>        
     </body>
 </html>
-

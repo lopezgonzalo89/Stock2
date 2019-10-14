@@ -1,39 +1,28 @@
+<!-- @LopezGonzalo89 - Septiembre 2019-->
+
 <!DOCTYPE html>
 <html lang="es">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/estilosMovimientos.css">
-        <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
+
+        <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
+        <script src="scripts/movimientosScript.js"></script>
+        <script src="ventor/select2/js/select2.js"></script>
+
         <title>Control de Stock</title>
     </head>
 
     <body>
-        <div class="container cuerpo">
-            <div class="row header">
-                <div class="col-2">
-                    <img class="logo" src="Imagenes/Logo.png" alt="">
-                </div>
-                <div class="col-8" Id="titulo">
-                    <h1>MOVIMIENTOS</h1>
-                </div>
-                <div class="col-2">
-                    <img class="logo" src="Imagenes/Logo.png" alt="">
-                </div>
-            </div>
-            <div class="row nav">
-                <div class="col-12">
-                <a class="btn btn-success" href="productos.jsp">STOCK</a>
-                <a class="btn btn-primary" href="movimientos.jsp">MOVIMIENTOS</a>
-                <a class="btn btn-success" href="alta.jsp">ALTA PRODUCTOS</a>
-                <a class="btn btn-success" href="recetas.jsp">RECETAS</a>
-                </div>
-            </div>
-        </div>
+        <%@include file="templates/header.jsp" %>
+
         <div class="container contenido">
             <div class="formulario">
                 <form action="movimientosController">
@@ -58,23 +47,15 @@
                         <textarea name="nota" id="idNota" cols="70" rows="2" placeholder="NOTA"></textarea> <br>
                         <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar"/>
                     </div>
+
+                    <h3>${estado}</h3>
+                    
                 </form>
             </div>
-            <h3>${estado}</h3>
             <br>             
         </div>
 
-        <div class="container">
-            <footer class="row">
-                <div class="col-8"></div>
-                <h5>�ChoppIn - Italia 953, San Miguel, Argentina.</h5>
-            </footer>
-        </div>
+        <%@include file="templates/footer.jsp" %>
 
-        <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
-        <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="scripts/movimientosScript.js"></script>
-        <script src="ventor/select2/js/select2.js"></script>
     </body>
-
 </html>

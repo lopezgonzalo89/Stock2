@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#titulo").append("<h1>RECETAS</h1>");
     getProductos();    
     getUnidades();
 });
