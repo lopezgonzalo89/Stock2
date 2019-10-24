@@ -8,5 +8,5 @@ select IdVenta,IdProducto ,Cantidad from VentasDetalles
 
 
 Mysql
-user: GGG
-pass : admin
+user: "GGG"
+pass : ""
