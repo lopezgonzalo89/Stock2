@@ -18,9 +18,9 @@ public class Validacion extends HttpServlet {
 
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        System.out.println("En el servlet validacion");
-        Consultas con = new Consultas();
+        System.out.println("En el servlet validacion");        
         try {
+            Consultas con = new Consultas();
             if (con.Autenticacion(user, pass)) {
                 response.sendRedirect("productos.jsp");
             } else {
@@ -28,6 +28,7 @@ public class Validacion extends HttpServlet {
             }
         } catch (IOException | ClassNotFoundException | SQLException e) {
             System.out.println("Error " + e);
+            response.sendRedirect("index.jsp");
         }
     }
 
