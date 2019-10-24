@@ -13,5 +13,17 @@ public class Conexion {
             System.out.println("Conectado a la base de datos");        
         return dataBaseConnection;
     }
+    public static Connection getConnectionSQLserver() throws ClassNotFoundException, SQLException {
+        Connection dataBaseConnection;
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String sourceURL = "jdbc:sqlserver://GMACHINE\\GGG:1433;databaseName=Choppin_ventas;";
+            dataBaseConnection = DriverManager.getConnection(sourceURL, "sa", "");
+            System.out.println("Conectado a SQL Server");        
+        return dataBaseConnection;
+    }
     
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Conexion con = new Conexion();
+        Conexion.getConnectionSQLserver();
+    }
 }
