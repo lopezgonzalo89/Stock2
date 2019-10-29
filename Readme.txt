@@ -1,0 +1,1 @@
+Programa de control de Stock para la cerveceria Chopp In - San Miguel.
