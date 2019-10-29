@@ -7,16 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css">        
-        <link rel="stylesheet" href="ventor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css">        
+        <link rel="stylesheet" href="vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/estilosProductos.css">
 
-        <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
-        <script src="ventor/popper/popper.min.js"></script>        
-        <script src="ventor/datatables/datatables.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/jquery/jquery-3.4.1.min.js"></script>
+        <script src="vendor/popper/popper.min.js"></script>        
+        <script src="vendor/datatables/datatables.min.js"></script>
         <script src="scripts/productosScript.js"></script>
 
         <title>Control de Stock</title>

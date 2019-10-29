@@ -7,15 +7,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">    
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">    
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/estilosRecetas.css">
-        <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
+        <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
 
-        <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
-        <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/jquery/jquery-3.4.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="scripts/recetasScript.js"></script>
-        <script src="ventor/select2/js/select2.js"></script>
+        <script src="vendor/select2/js/select2.js"></script>
 
         <title>Control de Stock</title>
     </head>

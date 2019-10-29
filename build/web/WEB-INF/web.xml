@@ -1,52 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>Validacion</servlet-name>
-        <servlet-class>Stock.Servlet.Validacion</servlet-class>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Stock.Servlet.LoginController</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
     <servlet>
-        <servlet-name>MovimientosIndex</servlet-name>
+        <servlet-name>productosController</servlet-name>
+        <servlet-class>Stock.Servlet.ProductosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productosController</servlet-name>
+        <url-pattern>/productosController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Movimientos</servlet-name>
         <servlet-class>Stock.Servlet.MovimientosController</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>Movimientos</servlet-name>
+        <url-pattern>/movimientos</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>AltaController</servlet-name>
         <servlet-class>Stock.Servlet.AltaController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>productosController</servlet-name>
-        <servlet-class>Stock.Servlet.productosController</servlet-class>
+        <servlet-name>CargarProducto</servlet-name>
+        <servlet-class>Stock.Servlet.CargarProducto</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>movimientosController</servlet-name>
-        <servlet-class>Stock.Servlet.movimientosController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>cargarMovimiento</servlet-name>
-        <servlet-class>Stock.Servlet.cargarMovimiento</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Validacion</servlet-name>
-        <url-pattern>/Validacion</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MovimientosIndex</servlet-name>
-        <url-pattern>/MovimientosIndex</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AltaController</servlet-name>
         <url-pattern>/AltaController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>productosController</servlet-name>
-        <url-pattern>/productosController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>movimientosController</servlet-name>
-        <url-pattern>/movimientosController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>cargarMovimiento</servlet-name>
-        <url-pattern>/cargarMovimiento</url-pattern>
+        <servlet-name>CargarProducto</servlet-name>
+        <url-pattern>/Cargar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

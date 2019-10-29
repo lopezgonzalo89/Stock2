@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <link rel="stylesheet" href="ventor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/layout.css">    
     <link rel="stylesheet" href="css/estilosAlta.css">
-    <link rel="stylesheet" href="ventor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
     
-    <script src="ventor/jquery/jquery-3.4.1.min.js"></script>
-    <script src="ventor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery-3.4.1.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="scripts/AltaScript.js"></script>
-    <script src="ventor/select2/js/select2.js"></script>
+    <script src="vendor/select2/js/select2.js"></script>
     
     <title>Control de Stock</title>
 </head>
@@ -26,18 +26,18 @@
     
     <div class="container contenido">
         <div class="formulario">
-            <form action="cargarMovimiento">
+            <form action="Cargar">
                 <div id="form">      
                     <br>                    
                     <label>Producto</label> &nbsp;
-                    <input type="text" name="nombre" required="">
+                    <input type="text" name="nombre" >
                     <br> 
                     <br>                                    
-                    <label>Stock Mï¿½nimo</label> &nbsp;
-                    <input type="number" name="minimo" id="cuadroMin" required /> &nbsp;&nbsp;
+                    <label>Stock Mínimo</label> &nbsp;
+                    <input type="number" name="minimo" id="cuadroMin"  /> &nbsp;&nbsp;
                     <br>
-                    <label>Stock Mï¿½ximo</label> &nbsp;
-                    <input type="number" name="maximo" id="cuadroMax" required /> &nbsp;&nbsp;
+                    <label>Stock Máximo</label> &nbsp;
+                    <input type="number" name="maximo" id="cuadroMax"  /> &nbsp;&nbsp;
                     <br>                              
                     <br>        
                     <label>Unidad</label> &nbsp;

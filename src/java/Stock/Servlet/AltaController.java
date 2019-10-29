@@ -1,8 +1,6 @@
-  
 package Stock.Servlet;
 
 import Stock.Conecction.Consultas;
-import Stock.Conecction.Updates;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,20 +21,23 @@ public class AltaController extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String action = request.getParameter("action");
+        System.out.println("En AltaController");
 
-        if ("getCategorias".equals(action)) {
-            Consultas con = new Consultas();
-            ArrayList resp = con.getCategorias();
+        switch (action) {
+            case "getCategoriasParaAlta":
+                Consultas con = new Consultas();
+                ArrayList resp = con.getCategorias();
 
-            String json = new Gson().toJson(resp);
-            out.println(json);
+                String json = new Gson().toJson(resp);
+                out.println(json);
         }
-        if ("getUnidades".equals(action)) {
-            Consultas con = new Consultas();
-            ArrayList resp2 = con.getUnidades();
+        switch (action) {
+            case "getUnidades":
+                Consultas con = new Consultas();
+                ArrayList resp2 = con.getUnidades();
 
-            String json2 = new Gson().toJson(resp2);
-            out.println(json2);
+                String json2 = new Gson().toJson(resp2);
+                out.println(json2);
         }
     }
 
@@ -55,7 +56,7 @@ public class AltaController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -73,7 +74,7 @@ public class AltaController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(productosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

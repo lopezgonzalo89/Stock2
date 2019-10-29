@@ -5,12 +5,13 @@ $(document).ready(function () {
 });
 function getCategorias() {
     $.ajax({
-        type: "get",
-        url: "AltaController?action=getCategorias",
+        type: "post",
+        url: "AltaController?action=getCategoriasParaAlta",
         async: true,
         cache: false,
         dateType: "json",
         success: function (resp) {
+            console.log("respuesta: " + resp);
             $(".cuadroCat").html("");
             for (let valor of resp) {
                 $(".cuadroCat").append('<option value="' + valor.IdCategoria + '">' + valor.Categoria + '</option>');
@@ -24,12 +25,13 @@ function getCategorias() {
 
 function getUnidades() {
     $.ajax({
-        type: "get",
+        type: "post",
         url: "AltaController?action=getUnidades",
         async: true,
         cache: false,
         dateType: "json",
         success: function (resp2) {
+            console.log("respuesta2: " + resp2);
             $(".cuadroUnidad").html("");
             for (let valor of resp2) {
                 $(".cuadroUnidad").append('<option value="' + valor.IdUnidad + '">' + valor.Unidad + '</option>');

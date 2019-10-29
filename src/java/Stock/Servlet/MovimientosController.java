@@ -1,9 +1,12 @@
 package Stock.Servlet;
 
+import Stock.Conecction.Consultas;
 import Stock.Conecction.Updates;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -12,36 +15,47 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class cargarMovimiento extends HttpServlet {
+public class MovimientosController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            {
-                System.out.println("En cargarMovimiento");
-                Updates up = new Updates();
+        response.setContentType("application/json;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
-                String nombre = request.getParameter("nombre");
-                String minimo = request.getParameter("minimo");
-                String maximo = request.getParameter("maximo");
-                String idUnidad = request.getParameter("idUnidad");
-                String idCategoria = request.getParameter("idCategoria");
+        String action = request.getParameter("action");
+        
+        // El action getTiposMovimientos carga el Combo
+        if ("getTiposMovimientos".equals(action)) {
+            Consultas con = new Consultas();
+            ArrayList resp = con.getMovimientos();
 
-                boolean resp = up.Alta(nombre, minimo, maximo, idUnidad, idCategoria);
-                if (resp == true) {
-                    request.setAttribute("estado", "Cargado correctamente");
-                    RequestDispatcher rd;
-                    rd = request.getRequestDispatcher("/alta.jsp");
-                    rd.forward(request, response);
-                } else {
-                    request.setAttribute("estado", "Fallo al cargar");
-                    RequestDispatcher rd;
-                    rd = request.getRequestDispatcher("/alta.jsp");
-                    rd.forward(request, response);
-                }
+            String json = new Gson().toJson(resp);
+            out.println(json);
+            
+        // Sino hay action, se espera que se active el botón Cargar
+        } else {
+            Updates up = new Updates();
+
+            String fecha = request.getParameter("fecha");
+            String idProd = request.getParameter("idProd");
+            String cant = request.getParameter("cant");
+            String idTipoMov = request.getParameter("idTipoMov");
+            String nota = request.getParameter("nota");
+
+            boolean resp = up.Movimiento(fecha, idProd, cant, idTipoMov, nota);
+            if (resp == true) {
+                request.setAttribute("estado", "Cargado correctamente");
+                RequestDispatcher rd;
+                rd = request.getRequestDispatcher("/movimientos.jsp");
+                rd.forward(request, response);
+                
+                response.sendRedirect("movimientos.jsp");
+            } else {
+                request.setAttribute("estado", "Fallo al cargar");
+                RequestDispatcher rd;
+                rd = request.getRequestDispatcher("/movimientos.jsp");
+                rd.forward(request, response);
             }
-
         }
     }
 
@@ -60,7 +74,7 @@ public class cargarMovimiento extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(cargarMovimiento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovimientosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,7 +92,7 @@ public class cargarMovimiento extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(cargarMovimiento.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovimientosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

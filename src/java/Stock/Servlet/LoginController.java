@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Stock.Conecction.Consultas;
 
-public class Validacion extends HttpServlet {
+public class LoginController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
@@ -18,12 +18,13 @@ public class Validacion extends HttpServlet {
 
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        System.out.println("En el servlet validacion");        
+        System.out.println("En LoginController");        
         try {
             Consultas con = new Consultas();
             if (con.Autenticacion(user, pass)) {
                 response.sendRedirect("productos.jsp");
             } else {
+                System.out.println("Error de login" );
                 response.sendRedirect("index.jsp");
             }
         } catch (IOException | ClassNotFoundException | SQLException e) {
@@ -47,9 +48,9 @@ public class Validacion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -67,9 +68,9 @@ public class Validacion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

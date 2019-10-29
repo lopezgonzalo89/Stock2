@@ -87,7 +87,7 @@ public class Consultas extends Conexion {
     }
 
     public ArrayList getCategorias() throws SQLException, ClassNotFoundException {
-        ArrayList<Categoria> categoria = new ArrayList<>();
+        ArrayList<Categoria> categorias = new ArrayList<>();
         try {
             Connection con = Conexion.getConnection();
             Statement st = con.createStatement();
@@ -100,16 +100,16 @@ public class Consultas extends Conexion {
 
                 Categoria tempCat = new Categoria(cat, idCat);
 
-                categoria.add(tempCat);
+                categorias.add(tempCat);
                 System.out.println(tempCat);
             }
         } catch (SQLException e) {
         }
-        return categoria;
+        return categorias;
     }
 
     public ArrayList getUnidades() throws SQLException, ClassNotFoundException {
-        ArrayList<Unidad> unidad = new ArrayList<>();
+        ArrayList<Unidad> unidades = new ArrayList<>();
         try {
             Connection con = Conexion.getConnection();
             Statement st = con.createStatement();
@@ -122,11 +122,11 @@ public class Consultas extends Conexion {
 
                 Unidad tempUnid = new Unidad(unid, idUnid);
 
-                unidad.add(tempUnid);
+                unidades.add(tempUnid);
                 System.out.println(tempUnid);
             }
         } catch (SQLException e) {
         }
-        return unidad;
+        return unidades;
     }
 }

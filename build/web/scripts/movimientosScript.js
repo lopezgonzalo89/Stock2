@@ -1,12 +1,12 @@
 $(document).ready(function () {
     $("#titulo").append("<h1>MOVIMIENTOS</h1>");
-    getMovimientos();
+    getTiposMovimientos();
     getProductos();
 });
-function getMovimientos() {
+function getTiposMovimientos() {
     $.ajax({
-        type: "get",
-        url: "movimientosController?action=getMovimientos",
+        type: "post",
+        url: "movimientos?action=getTiposMovimientos",
         async: true,
         cache: false,
         dateType: "json",
@@ -22,7 +22,7 @@ function getMovimientos() {
 }
 function getProductos() {
     $.ajax({
-        type: "get",
+        type: "post",
         url: "productosController",
         async: true,
         cache: false,

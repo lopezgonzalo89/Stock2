@@ -5,7 +5,7 @@ $(document).ready(function () {
 function getProductos() {
     console.log("en stock script");
     $.ajax({
-        type: "get",
+        type: "post",
         url: "productosController",
         async: true,
         cache: false,
