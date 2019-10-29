@@ -5,3 +5,8 @@ inner join Marcas on Marcas.IdMarca = Productos.IdMarca
 
 
 select IdVenta,IdProducto ,Cantidad from VentasDetalles
+
+
+Mysql
+user: "GGG"
+pass : ""
