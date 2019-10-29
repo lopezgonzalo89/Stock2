@@ -17,7 +17,7 @@ function getCategorias() {
                 $(".cuadroCat").append('<option value="' + valor.IdCategoria + '">' + valor.Categoria + '</option>');
             }
             $(".cuadroCat").select2({
-                heigth: 500
+                heigth: 501
             });
         }
     });
