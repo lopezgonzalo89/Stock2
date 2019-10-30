@@ -16,8 +16,8 @@ public class Conexion {
     public static Connection getConnectionSQLserver() throws ClassNotFoundException, SQLException {
         Connection dataBaseConnection;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String sourceURL = "jdbc:sqlserver://GMACHINE\\GGG:1433;databaseName=Choppin_ventas;";
-            dataBaseConnection = DriverManager.getConnection(sourceURL, "sa", "");
+            String sourceURL = "jdbc:sqlserver://GMACHINE:1433;databaseName=master;";
+            dataBaseConnection = DriverManager.getConnection(sourceURL, "GGG", "admin");
             System.out.println("Conectado a SQL Server");        
         return dataBaseConnection;
     }

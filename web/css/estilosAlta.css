@@ -5,12 +5,6 @@
     border: 2px solid rgb(1, 99, 1);
 }
 
-.formulario {
-    margin-top: 30px;
-    background-color: rgb(231, 230, 227);
-    overflow-y: auto;
-    width: 600px;
-}
 select{
     width: 130px;
     height: 28px;
@@ -29,13 +23,6 @@ select{
     width: 80px;
     border-radius: 3px;
     text-align: center;
-}
-
-#form {
-    margin: 5px;
-    padding-left: 15px;
-    border: 2px solid;
-    height: 400px;
 }
 
 .fecha{

@@ -5,12 +5,6 @@
     border: 2px solid rgb(1, 99, 1);
 }
 
-.formulario {
-    margin-top: 30px;
-    background-color: rgb(231, 230, 227);
-    overflow-y: auto;
-    width: 600px;
-}
 select{
     width: 130px;
     height: 28px;
@@ -23,8 +17,6 @@ select{
     margin-right: 30px;
     width: 150px;    
 }
-
-
 
 #cuadroNum {
     margin-left: 10px;

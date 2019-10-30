@@ -43,3 +43,17 @@ h5 {
     color: white;
     font-size: 11px;
 }
+
+.formulario {
+    margin: auto;
+    background-color: rgb(231, 230, 227);
+    overflow-y: auto;
+    width: 600px;
+}
+#form {
+    margin-top: 50px;
+    margin: 5px;
+    padding-left: 15px;
+    border: 2px solid;
+    height: 400px;
+}
