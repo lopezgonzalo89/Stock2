@@ -16,7 +16,7 @@ public class CargarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         
-                    Updates up = new Updates();
+            Updates up = new Updates();
 
             String nombre = request.getParameter("nombre");
             String minimo = request.getParameter("minimo");
