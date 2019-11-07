@@ -10,10 +10,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Consultas extends Conexion {
+public class Consultas {
 
     public boolean Autenticacion(String user, String pass) throws SQLException, ClassNotFoundException {
-        Connection con = Conexion.getConnection();
+        Conexion conexion = Conexion.getConexion();
+        Connection con = conexion.getConnectionMySQL();
         Statement st = con.createStatement();
         ResultSet rs;
         String Consulta = "select * from usuarios";
@@ -32,7 +33,8 @@ public class Consultas extends Conexion {
         ArrayList<Producto> productos = new ArrayList<>();
 
         try {
-            Connection con = Conexion.getConnection();
+            Conexion conexion = Conexion.getConexion();
+            Connection con = conexion.getConnectionMySQL();
             Statement st = con.createStatement();
             String Consulta = "select * from productos INNER JOIN Categorias on productos.IdCategoria = categorias.IdCategoria INNER JOIN unidades on productos.IdUnidad = unidades.IdUnidad ";
             ResultSet rs = st.executeQuery(Consulta);
@@ -67,7 +69,8 @@ public class Consultas extends Conexion {
         ArrayList<TipoMovimiento> movimientos = new ArrayList<>();
 
         try {
-            Connection con = Conexion.getConnection();
+            Conexion conexion = Conexion.getConexion();
+            Connection con = conexion.getConnectionMySQL();
             Statement st = con.createStatement();
             String Consulta = "SELECT * from tipomovimientos";
             ResultSet rs = st.executeQuery(Consulta);
@@ -89,7 +92,8 @@ public class Consultas extends Conexion {
     public ArrayList getCategorias() throws SQLException, ClassNotFoundException {
         ArrayList<Categoria> categorias = new ArrayList<>();
         try {
-            Connection con = Conexion.getConnection();
+            Conexion conexion = Conexion.getConexion();
+            Connection con = conexion.getConnectionMySQL();
             Statement st = con.createStatement();
             String Consulta = "SELECT * from categorias";
             ResultSet rs = st.executeQuery(Consulta);
@@ -111,7 +115,8 @@ public class Consultas extends Conexion {
     public ArrayList getUnidades() throws SQLException, ClassNotFoundException {
         ArrayList<Unidad> unidades = new ArrayList<>();
         try {
-            Connection con = Conexion.getConnection();
+            Conexion conexion = Conexion.getConexion();
+            Connection con = conexion.getConnectionMySQL();
             Statement st = con.createStatement();
             String Consulta = "SELECT * from unidades";
             ResultSet rs = st.executeQuery(Consulta);

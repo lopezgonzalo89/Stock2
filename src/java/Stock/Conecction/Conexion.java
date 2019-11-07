@@ -5,7 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-    public static Connection getConnection() throws ClassNotFoundException, SQLException {
+    private static Conexion conectado;
+    
+    //Evitar instancia mediante "new"
+    private Conexion(){        
+    }    
+    // Instancia sólo una vez por éste metodo
+    public static Conexion getConexion(){
+        if(conectado == null){
+            conectado = new Conexion();
+        }
+        return conectado;
+    }
+    public Connection getConnectionMySQL() throws ClassNotFoundException, SQLException {
         Connection dataBaseConnection;
             Class.forName("com.mysql.cj.jdbc.Driver");
             String sourceURL = "jdbc:mysql://127.0.0.1:3306/choppin_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -13,17 +25,12 @@ public class Conexion {
             System.out.println("Conectado a MySQL");        
         return dataBaseConnection;
     }
-    public static Connection getConnectionSQLserver() throws ClassNotFoundException, SQLException {
+    public Connection getConnectionSQLserver() throws ClassNotFoundException, SQLException {
         Connection dataBaseConnection;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String sourceURL = "jdbc:sqlserver://GMACHINE:1433;databaseName=master;";
             dataBaseConnection = DriverManager.getConnection(sourceURL, "GGG", "admin");
             System.out.println("Conectado a SQL Server");        
         return dataBaseConnection;
-    }
-    
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Conexion con = new Conexion();
-        Conexion.getConnectionSQLserver();
     }
 }
