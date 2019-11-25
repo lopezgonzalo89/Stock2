@@ -24,7 +24,9 @@ public class ProductosController extends HttpServlet {
         ArrayList resp = con.getProductos();
         
         String json = new Gson().toJson(resp);
+        System.out.println(resp);
         out.println(json);
+        System.out.println("Fin");
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

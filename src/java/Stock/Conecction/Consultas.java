@@ -44,18 +44,27 @@ public class Consultas {
                 int Minimo = rs.getInt("StockMinimo");
                 int Maximo = rs.getInt("StockMaximo");
                 String Unidad = rs.getString("TipoUnidad");
+                int IdUnidad = rs.getInt("IdUnidad");
                 String Categoria = rs.getString("Categoria");
+                int IdCategoria = rs.getInt("IdCategoria");
                 int IdProducto = rs.getInt("IdProducto");
+                
+                //Categoria de un producto
+                Categoria categoria = new Categoria(Categoria, IdCategoria);
+                
+                //Unidad de un producto                
+                Unidad unidad = new Unidad(Unidad, IdUnidad);
 
-                Statement st2 = con.createStatement();
+                //Cantidad de un producto (suma todos los movimientos)
+                Statement stmCantidad = con.createStatement();
                 String Consulta2 = "select SUM(cantidad) from movimientos where movimientos.IdProducto = " + IdProducto + "";
-                ResultSet rs2 = st2.executeQuery(Consulta2);
+                ResultSet rs2 = stmCantidad.executeQuery(Consulta2);
 
                 while (rs2.next()) {
                     float cantidad = rs2.getFloat("SUM(cantidad)");
                     System.out.println("rs2 " + cantidad);
 
-                    Producto tempProd = new Producto(Nombre, Unidad, Minimo, Maximo, Categoria, IdProducto, cantidad);
+                    Producto tempProd = new Producto(IdProducto, Nombre, Minimo, Maximo, categoria, unidad, cantidad);
 
                     productos.add(tempProd);
                 }
