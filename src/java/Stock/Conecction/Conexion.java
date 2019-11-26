@@ -1,12 +1,8 @@
 package Stock.Conecction;
 
-import Stock.Entities.ProductoVenta;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 
 public class Conexion {
 
@@ -40,27 +36,5 @@ public class Conexion {
         dataBaseConnection = DriverManager.getConnection(sourceURL, "GGG", "admin");
         System.out.println("Conectado a SQL Server");
         return dataBaseConnection;
-    }
-
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Conexion con = new Conexion();
-        Connection sqlS = con.getConnectionSQLserver();
-        Statement st = sqlS.createStatement();
-        String Consulta = "select IdProducto, Categorias.Nombre, Marcas.Nombre, Productos.Nombre from Productos \n"
-                + "inner join Categorias on Productos.IdCategoria = Categorias.IdCategoria \n"
-                + "inner join Marcas on Productos.IdMarca = Marcas.IdMarca";
-        ResultSet rs = st.executeQuery(Consulta);
-        System.out.println("cargo el query");
-        ArrayList<ProductoVenta> productoVenta = new ArrayList<>();
-        while (rs.next()) {
-            String nombre = rs.getString("Nombre");
-            int idProd = rs.getInt("IdProducto");
-
-            String nombreFinal = "Hola";
-            ProductoVenta tempProdVta = new ProductoVenta(idProd, nombreFinal);
-
-            productoVenta.add(tempProdVta);
-            System.out.println(productoVenta);
-        }
     }
 }

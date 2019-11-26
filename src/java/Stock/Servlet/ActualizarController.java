@@ -46,8 +46,8 @@ public class ActualizarController extends HttpServlet {
                 // Compara si alguna venta es mayor a la última guardada
                 if (UltVentaGuardada < IdVentaDetalle) {
                     //Actualiza el Último IdVentaGuardado
-                    //PreparedStatement st = conexion.prepareStatement("INSERT INTO `ultventa` (`IdUltVenta`) VALUES ('" + IdVentaDetalle + "')");
-                    //st.execute();
+                    PreparedStatement st2 = conexion.prepareStatement("INSERT INTO `ultventa` (`IdUltVenta`) VALUES ('" + IdVentaDetalle + "')");
+                    st2.execute();
 
                     // Receta según IdProducto en IdVentaDetalle
                     Statement receta = conexion.createStatement();
@@ -61,8 +61,8 @@ public class ActualizarController extends HttpServlet {
                         String cantTotal = String.valueOf(cantTotalInt);
 
                         //INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '1', NULL, '2', 'Insertado desde el control Stock', '3')
-                        PreparedStatement st2 = conexion.prepareStatement("INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '" + IdProd + "', NULL, ' -" + cantTotal + "', 'Insertado desde el control Stock', '3')");
-                        st2.execute();
+                        PreparedStatement st3 = conexion.prepareStatement("INSERT INTO `movimientos` (`IdMovimiento`, `IdProducto`, `Fecha`, `Cantidad`, `Nota`, `IdTipoMovimiento`) VALUES (NULL, '" + IdProd + "', NULL, ' -" + cantTotal + "', 'Insertado desde el control Stock', '3')");
+                        st3.execute();
                     }
                 }
             }
