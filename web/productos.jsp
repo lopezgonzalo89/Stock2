@@ -41,6 +41,8 @@
                 <tbody id="tablaContenido">
                 </tbody>
             </table>
+            <button class="btn btn-info" onclick="actualizar()"> ACTUALIZAR </button>
+            <h3> ${estado}</h3>
         </div>
 
         <%@include file="templates/footer.jsp" %>

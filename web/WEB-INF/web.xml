@@ -49,20 +49,20 @@
         <url-pattern>/ProductosVentasController</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>VentasController</servlet-name>
-        <servlet-class>Stock.Servlet.VentasController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>RecetasController</servlet-name>
         <servlet-class>Stock.Servlet.RecetasController</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>VentasController</servlet-name>
-        <url-pattern>/VentasController</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>ActualizarController</servlet-name>
+        <servlet-class>Stock.Servlet.ActualizarController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RecetasController</servlet-name>
         <url-pattern>/RecetasController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarController</servlet-name>
+        <url-pattern>/ActualizarController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

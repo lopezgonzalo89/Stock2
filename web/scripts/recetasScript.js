@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $("#titulo").append("<h1>RECETAS</h1>");
     getProductos();
-    getUnidades();
     getProductosVentas();
 });
 
@@ -28,26 +27,6 @@ function getProductos() {
     });
 }
 
-function getUnidades() {
-    $.ajax({
-        type: "post",
-        url: "AltaController?action=getUnidades",
-        async: true,
-        cache: false,
-        dateType: "json",
-        success: function (resp2) {
-            console.log("respuesta2: " + resp2);
-            $(".cuadroUnidad").html("");
-            for (let valor of resp2) {
-                $(".cuadroUnidad").append('<option value="' + valor.IdUnidad + '">' + valor.Unidad + '</option>');
-            }
-            $(".cuadroUnidad").select2({
-                heigth: 500
-            });
-        }
-    });
-};
-
 function getProductosVentas() {
     $.ajax({
         type: "post",
@@ -58,7 +37,7 @@ function getProductosVentas() {
         success: function (resp) {
             $(".cuadroProdVenta").html("");
             for (let valor of resp) {
-                $(".cuadroProdVenta").append('<option value="' + valor.IdProducto + '">' + valor.Nombre + '</option>');
+                $(".cuadroProdVenta").append('<option value="' + valor.IdProductoVenta + '">' + valor.Nombre + '</option>');
             }
             $(".cuadroProd").select2({
                 heigth: 500

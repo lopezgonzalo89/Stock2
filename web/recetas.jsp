@@ -45,17 +45,16 @@
                         <br>
                         <br>
                         <label> Cantidad: </label>                    
-                        <input type="number" >
-                        <br>
-                        <label> Tipo de unidad: </label>                    
-                        <select name="idUnidad" class="cuadroUnidad">
-                        </select>
+                        <input type="number" name="cantidad" step="0.001">
+                        <label> unidad: </label>                                            
                         <br>
                         <br>
                         <input type="submit" class="btn btn-info" id="btnCargar" value="Cargar"/>
                     </div>
                 </form>
             </div>
+            <h3> ${estado}</h3>
+            <br>
         </div>
 
         <%@include file="templates/footer.jsp" %>

@@ -4,6 +4,7 @@ $(document).ready(function () {
 });
 function getProductos() {
     console.log("en stock script");
+    $("#tablaContenido").append('');
     $.ajax({
         type: "post",
         url: "productosController",
@@ -32,3 +33,16 @@ function getProductos() {
     });
 }
 
+function actualizar() {
+    $.ajax({
+        type: "get",
+        url: "ActualizarController",
+        async: true,
+        cache: false,
+        dateType: "json",
+        success: function () {            
+            alert("Actualizado");
+            getProductos();            
+        }
+    });
+}
