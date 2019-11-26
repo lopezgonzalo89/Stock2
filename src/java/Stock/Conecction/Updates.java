@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class Updates {
 
+    // Crear un nuevo producto
     public boolean Alta(String nombre, String minimo, String maximo, String idUnidad, String idCategoria) throws SQLException, ClassNotFoundException {
         try {
             Conexion conexion = Conexion.getConexion();
@@ -19,7 +20,7 @@ public class Updates {
             return false;
         }
     }
-
+    
     public boolean Movimiento(String fecha, String idProd, String cant, String idTipoMov, String nota) {
         try {
             Conexion conexion = Conexion.getConexion();

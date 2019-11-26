@@ -25,7 +25,7 @@
 
         <div class="container contenido">
             <div class="formulario">
-                <form action="movimientos" method="GET">
+                <form action="movimientos" method="post">
                     <div id="form">
                         <br>
                         <label> Fecha </label> &nbsp;&nbsp; <input type ="date" name="fecha"/>

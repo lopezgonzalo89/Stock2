@@ -2,7 +2,6 @@ package Stock.Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,65 +12,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.google.gson.Gson;
 
-
 public class ProductosController extends HttpServlet {
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+
+    // CARGA LOS PRODUCTOS EN LA TABLA PRINCIPAL
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        System.out.println("En el servlet productosController");
-        Consultas con = new Consultas();
-        ArrayList resp = con.getProductos();
-        
-        String json = new Gson().toJson(resp);
-        System.out.println(resp);
-        out.println(json);
-        System.out.println("Fin");
-    }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         try {
-            processRequest(request, response);
+            PrintWriter out = response.getWriter();
+            Consultas con = new Consultas();
+            ArrayList resp;
+            resp = con.getProductos();
+
+            String json = new Gson().toJson(resp);
+            out.println(json);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 }

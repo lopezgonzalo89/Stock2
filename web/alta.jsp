@@ -26,7 +26,7 @@
     
     <div class="container contenido">
         <div class="formulario">
-            <form action="Cargar">
+            <form action="Cargar" method="post">
                 <div id="form">      
                     <br>                    
                     <label>Producto</label> &nbsp;

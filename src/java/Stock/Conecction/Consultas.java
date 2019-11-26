@@ -1,9 +1,10 @@
 package Stock.Conecction;
 
-import Stock.Class.Categoria;
-import Stock.Class.TipoMovimiento;
-import Stock.Class.Producto;
-import Stock.Class.Unidad;
+import Stock.Entities.Categoria;
+import Stock.Entities.TipoMovimiento;
+import Stock.Entities.Producto;
+import Stock.Entities.ProductoVenta;
+import Stock.Entities.Unidad;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,10 +49,10 @@ public class Consultas {
                 String Categoria = rs.getString("Categoria");
                 int IdCategoria = rs.getInt("IdCategoria");
                 int IdProducto = rs.getInt("IdProducto");
-                
+
                 //Categoria de un producto
                 Categoria categoria = new Categoria(Categoria, IdCategoria);
-                
+
                 //Unidad de un producto                
                 Unidad unidad = new Unidad(Unidad, IdUnidad);
 
@@ -69,7 +70,7 @@ public class Consultas {
                     productos.add(tempProd);
                 }
             }
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
         }
         return productos;
     }
@@ -143,4 +144,51 @@ public class Consultas {
         }
         return unidades;
     }
+    
+    public ArrayList getProductosVenta(){
+        ArrayList <ProductoVenta> productoVenta = new ArrayList<>();
+        try {
+            Conexion conexion = Conexion.getConexion();
+            Connection sqlS = conexion.getConnectionSQLserver();
+            Statement st = sqlS.createStatement();
+            String Consulta = "select IdProducto, Categorias.Nombre, Marcas.Nombre, Productos.Nombre from Productos \n" +
+                                "inner join Categorias on Productos.IdCategoria = Categorias.IdCategoria \n" +
+                                "inner join Marcas on Productos.IdMarca = Marcas.IdMarca";
+            ResultSet rs = st.executeQuery(Consulta);
+            
+            while (rs.next()) {
+                String categoria = rs.getString("Nombre");
+                String marca = rs.getString(3);
+                String nombre = rs.getString(4);
+                int idProd = rs.getInt("IdProducto");
+                
+                String nombreFinal = categoria + " " + marca + " " + nombre;
+                
+                ProductoVenta tempProdVta = new ProductoVenta(idProd, nombreFinal);
+
+                productoVenta.add(tempProdVta);
+                System.out.println(tempProdVta);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+        }
+        return productoVenta;
+    }
+    
+
+    public int ultVentaGuardada() {
+        int UltVentaGuardada = 0;
+        try {
+            Conexion conexion = Conexion.getConexion();
+            Connection mysql = conexion.getConnectionMySQL();
+            Statement stUltVenta = mysql.createStatement();
+            String consultaUltVenta = "select * from ultventa order by IdUltVenta desc limit 1";
+            ResultSet rsUltVenta = stUltVenta.executeQuery(consultaUltVenta);
+            while (rsUltVenta.next()) {
+                System.out.println("resultset " + rsUltVenta);
+                UltVentaGuardada = rsUltVenta.getInt("IdUltVenta");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+        }
+        return UltVentaGuardada;
+    } 
 }

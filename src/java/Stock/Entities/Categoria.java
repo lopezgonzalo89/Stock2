@@ -1,4 +1,4 @@
-package Stock.Class;
+package Stock.Entities;
 
 public class Categoria {
 

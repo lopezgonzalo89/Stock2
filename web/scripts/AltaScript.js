@@ -6,7 +6,7 @@ $(document).ready(function () {
 function getCategorias() {
     $.ajax({
         type: "post",
-        url: "AltaController?action=getCategoriasParaAlta",
+        url: "AltaController?action=getCategorias",
         async: true,
         cache: false,
         dateType: "json",

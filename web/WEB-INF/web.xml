@@ -28,17 +28,41 @@
         <servlet-name>AltaController</servlet-name>
         <servlet-class>Stock.Servlet.AltaController</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>AltaController</servlet-name>
+        <url-pattern>/AltaController</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>CargarProducto</servlet-name>
         <servlet-class>Stock.Servlet.CargarProducto</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AltaController</servlet-name>
-        <url-pattern>/AltaController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>CargarProducto</servlet-name>
         <url-pattern>/Cargar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ProductosVentasController</servlet-name>
+        <servlet-class>Stock.Servlet.ProductosVentasController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductosVentasController</servlet-name>
+        <url-pattern>/ProductosVentasController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VentasController</servlet-name>
+        <servlet-class>Stock.Servlet.VentasController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecetasController</servlet-name>
+        <servlet-class>Stock.Servlet.RecetasController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VentasController</servlet-name>
+        <url-pattern>/VentasController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecetasController</servlet-name>
+        <url-pattern>/RecetasController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -25,7 +25,7 @@
 
         <div class="container contenido">
             <div class="formulario">
-                <form action="recetasController">
+                <form action="RecetasController">
                     <div id="form">
                         <p>
                             Primero elegir el producto que se va a elaborar su receta. <br>
